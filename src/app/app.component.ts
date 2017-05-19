@@ -70,6 +70,7 @@ export class AppComponent {
     }
 
     this.markers.push(newMarker);
+    this._markerService.addMarker(newMarker);
   }
 }
 
