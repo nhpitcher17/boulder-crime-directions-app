@@ -52,6 +52,8 @@ export class AppComponent {
 
     var newLat = $event.coords.lat;
     var newLng = $event.coords.lng;
+
+    this._markerService.updateMarker(updMarker, newLat, newLng);
   }
 
   addMarker(){
@@ -72,7 +74,18 @@ export class AppComponent {
     this.markers.push(newMarker);
     this._markerService.addMarker(newMarker);
   }
+
+  removeMarker(marker){
+    console.log('Removing Marker...');
+    for (var i = 0; i < this.markers.length; i++){
+      if (marker.lat == this.markers[i].lat && marker.lng == this.markers[i].lng){
+        this.markers.splice(i, 1);
+      }
+    }
+    this._markerService.removeMarker(marker);
+  }
 }
+
 
 interface marker{
   name?: string;
