@@ -34,10 +34,11 @@ export class AppComponent {
       name: 'Untitled',
       lat: $event.coords.lat,
       lng: $event.coords.lng,
-      draggable: false
+      draggable: true
     }
 
     this.markers.push(newMarker);
+    this._markerService.addMarker(newMarker);
   }
 
   markerDragEnd(marker:any, $event:any){
@@ -85,7 +86,6 @@ export class AppComponent {
     this._markerService.removeMarker(marker);
   }
 }
-
 
 interface marker{
   name?: string;
