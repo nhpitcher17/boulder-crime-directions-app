@@ -8,8 +8,8 @@ import {MarkerService} from './services/marker.service';
   providers: [MarkerService]
 })
 export class AppComponent {
-  //Zoom level
-  zoom: number = 10;
+  //Zoom level: higher means closer
+  zoom: number = 12;
   //Start Position City Council
   lat: number = 40.0153;
   lng: number = -105.2798;
